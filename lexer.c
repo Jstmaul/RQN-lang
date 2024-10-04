@@ -20,7 +20,7 @@ data_struct *maulLexer(FILE *fp, int *token_count) {
   while ((ch = (int)fgetc(fp)) != EOF) {
     printf("lexer : %c\n", ch);
 
-    if (i >= (data_capacity)) {
+    if (i >= data_capacity) {
       data_capacity++;
       data = realloc(data, data_capacity * sizeof(data_struct));
       if (data == NULL) {
