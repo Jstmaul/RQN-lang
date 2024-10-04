@@ -1,4 +1,4 @@
-default :
+default : 
 	gcc -o app compiler.c lexer.c
-test :
-	./app test.txt
+test : default
+	./app test.rqn
