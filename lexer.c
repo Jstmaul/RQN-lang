@@ -52,6 +52,18 @@ data_struct *maulLexer(FILE *fp, int *token_count) {
     } else if (ch == ')') {
       data[i].character = ch;
       data[i].character_type = "right_parent";
+    } else if (ch == '*') {
+      data[i].character = ch;
+      data[i].character_type = "asteric";
+    } else if (ch == '^') {
+      data[i].character = ch;
+      data[i].character_type = "xor";
+    } else if (ch == '/') {
+      data[i].character = ch;
+      data[i].character_type = "backslash";
+    } else if (ch == '\\') {
+      data[i].character = ch;
+      data[i].character_type = "frontslash";
     } else {
       printf("unworked character :  %d\n", ch);
       continue;
