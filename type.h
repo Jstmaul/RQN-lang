@@ -2,11 +2,14 @@
 
 #define TYPES
 
-typedef struct data_struct {
+typedef struct lexer_data_struct {
   char character;
   char *character_type;
-}data_struct;
+} lexer_data_struct;
 
+typedef struct parser_data_struct {
+  char *string;
+  char *string_type;
+} parser_data_struct;
 
 #endif // !TYPES
-

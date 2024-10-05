@@ -8,6 +8,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-data_struct *maulLexer(FILE *, int *);
+lexer_data_struct *maulLexer(FILE *, int *);
 
 #endif // !LEXER

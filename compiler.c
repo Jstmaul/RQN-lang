@@ -6,6 +6,8 @@
 
 #define EXIT_SUCCESS 0
 
+int lexer_token_count;
+
 int main(int argc, char *argv[]) {
   if (argc < 2) {
     printf("give some input bro\n");
@@ -18,17 +20,18 @@ int main(int argc, char *argv[]) {
     return 1;
   }
 
-  int token_count;
-  data_struct *data = maulLexer(fp,&token_count);
+  lexer_data_struct *lexer_data = maulLexer(fp,&lexer_token_count);
 
   fclose(fp);
 
-  for (int i = 0; i < token_count; i++) {
-    printf("character : %c , type : %s\n",data[i].character,data[i].character_type);
+
+
+  for (int i = 0; i < lexer_token_count; i++) {
+    printf("character : %c , type : %s\n",lexer_data[i].character,lexer_data[i].character_type);
 
   }
 
-  free(data);
+  free(lexer_data);
 
   return EXIT_SUCCESS;
 }
