@@ -31,23 +31,33 @@ data_struct *maulLexer(FILE *fp, int *token_count) {
     if (isalpha(ch)) {
       data[i].character = ch;
       data[i].character_type = "name";
-      printf("lexing succes\n");
     } else if (isdigit(ch)) {
       data[i].character = ch;
       data[i].character_type = "digit";
-      printf("lexing succes\n");
     } else if (ch == '\n') {
       data[i].character = ch;
       data[i].character_type = "new_line";
-      printf("lexing succes\n");
     } else if (ch == ' ') {
       data[i].character = ch;
       data[i].character_type = "space";
-      printf("lexing succes\n");
+    } else if (ch == '{') {
+      data[i].character = ch;
+      data[i].character_type = "left_bracket";
+    } else if (ch == '}') {
+      data[i].character = ch;
+      data[i].character_type = "right_bracket";
+    } else if (ch == '(') {
+      data[i].character = ch;
+      data[i].character_type = "left_parent";
+    } else if (ch == ')') {
+      data[i].character = ch;
+      data[i].character_type = "right_parent";
     } else {
-      printf("unworked character :  %d", ch);
+      printf("unworked character :  %d\n", ch);
       continue;
     }
+    if (data[i].character)
+      printf("[SUCCES]\n");
     i++;
   }
   *token_count = i;
